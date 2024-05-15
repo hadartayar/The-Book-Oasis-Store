@@ -25,18 +25,11 @@
     <year>2003</year>
     <price>39.95</price>
   </book>
-  <book category="romance" cover="nishi">
+  <book category="romance" cover="first cover">
     <isbn>9043127323209</isbn>
-    <title lang="en">Hadar</title>
-    <author>J K</author>
+    <title lang="en">Me Before You</title>
+    <author>Jojo Moyes</author>
     <year>1998</year>
-    <price>1000</price>
-  </book>
-  <book category="" cover="">
-    <isbn>3353221578607</isbn>
-    <title lang="">
-    </title>
-    <year>2024</year>
-    <price>30</price>
+    <price>50.99</price>
   </book>
 </bookstore>
