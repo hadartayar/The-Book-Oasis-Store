@@ -1,0 +1,47 @@
+<div class="page-container">
+    <div class="responsive-table-container mat-elevation-z8">
+        <table mat-table [dataSource]="books" class="mat-table-responsive">
+            <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+                <th mat-header-cell *matHeaderCellDef> {{ column | titlecase }} </th>
+                <td mat-cell *matCellDef="let book; index as rowIndex" [ngSwitch]="column">
+                    <ng-container *ngSwitchCase="'action'">
+                        <ng-container *ngIf="!enableEdit || enableEditIndex !== rowIndex">
+                            <i mat-icon-button class="edit-icon" aria-hidden="true" (click)="onEdit(rowIndex)">
+                                <mat-icon>edit</mat-icon>
+                            </i>
+                            <i mat-icon-button class="delete-icon" aria-hidden="true" (click)="onDelete(book)">
+                                <mat-icon>delete</mat-icon>
+                            </i>
+                        </ng-container>
+                        <ng-container *ngIf="enableEdit && enableEditIndex === rowIndex">
+                            <i mat-icon-button class="save-icon" aria-hidden="true" (click)="onSave(book)">
+                                <mat-icon>save</mat-icon>
+                            </i>
+                            <i mat-icon-button class="cancel-icon" aria-hidden="true" (click)="onCancel()">
+                                <mat-icon>cancel</mat-icon>
+                            </i>
+                        </ng-container>
+                    </ng-container>
+                    <ng-container *ngIf="!enableEdit || (enableEdit && enableEditIndex !== rowIndex)">
+                        {{ book[column] }}
+                    </ng-container>
+                    <ng-container *ngIf="enableEdit && enableEditIndex === rowIndex && column !== 'action'">
+                        <input type="text" [(ngModel)]="book[column]" #inputField class="editable-input"
+                            [readonly]="column === 'isbn'">
+                    </ng-container>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <button mat-icon-button class="plus-button" title="Add New Book"
+            (click)="onAdd()"><mat-icon>add</mat-icon></button>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <p>By Hadar Tayar</p>
+        </div>
+    </footer>
+</div>

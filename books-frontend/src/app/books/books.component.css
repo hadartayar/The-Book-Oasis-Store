@@ -1,0 +1,99 @@
+.page-container {
+  position: relative;
+  min-height: 89vh;
+}
+
+table {
+    width: 100%;
+  }
+  
+.mat-header-cell input,
+.mat-cell input {
+    width: inherit;
+    box-sizing: border-box; 
+}
+.responsive-table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.mat-table-responsive {
+  width: 100%;
+  table-layout: fixed; /* Ensures the table width is consistent */
+}
+
+.mat-table-responsive th, 
+.mat-table-responsive td {
+  padding: 16px;
+  text-align: left;
+  word-wrap: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-table-responsive th, 
+.mat-table-responsive td,
+.mat-table-responsive input.editable-input {
+  box-sizing: border-box;
+}
+
+.editable-input {
+  width: 100%;
+  background-color: transparent;
+  padding: 8px;
+  font-size: inherit;
+}
+
+.editable-input[readonly] {
+  background-color: #f5f5f5; /* Light gray background for readonly inputs */
+  color: #555; /* Slightly darker text color */
+}
+
+.edit-icon:hover,
+.delete-icon:hover,
+.save-icon:hover,
+.cancel-icon:hover {
+    color: #5C9970;
+}
+
+
+  .plus-button {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    color: #ffff;
+    border: 2px solid lightgrey;
+    background-color: #5C9970;
+    font-size: 16px;
+    height: 2.5em;
+    width: 2.5em;
+    border-radius: 999px;
+    position: relative;
+}
+.plus-button:hover {
+  background-color: #72b482;
+  border-color: #72b482;
+  color: #ffffff;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
