@@ -13,5 +13,5 @@ Technologies:
 
 
 
-If I had extra time, I would include validations and improve the user interface :) 
+If I had extra time, I would include validations, authentication & authorization and improve the user interface :) 
 
